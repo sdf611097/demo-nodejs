@@ -1,6 +1,6 @@
 {
   "name": "demo-nodejs",
-  "keywords":"node", "nodejs", "demo",
+  "keywords":"node, nodejs, demo",
   "version": "1.0.1",
   "description": "A demo of nodejs",
   "main": "index.js",
