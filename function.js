@@ -22,4 +22,9 @@ console.log('mul', 1, 2,'=',  multiply(1,2));
 console.log('div', 1, 2,'=',  divide(1,2));
 
 
-
+module.exports = {
+    add,
+    del : del,
+    mul : multiply,
+    div : divide
+}
