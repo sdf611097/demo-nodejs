@@ -1,3 +1,4 @@
+'use strict'
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
@@ -22,6 +23,30 @@ app.post('/add', function(req, res){
 
 
 const port = process.env.PORT || 3000;
+
+app.get('/questions', function(req, res){
+    res.json([
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2000
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]);
+});
 
 app.listen(port, function () {
       console.log('Example app listening on port ' + port);
