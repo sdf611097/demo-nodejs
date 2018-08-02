@@ -4,10 +4,19 @@ var app = express();
 var bodyParser = require('body-parser')
 var func = require('./function.js');
 
-app.use(bodyParser.json({type: '*/*'}));
+app.use(bodyParser.json({type: 'application/json'}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function (req, res) {
-      res.send('Ni Hao');
+    res.send('Ni Hao');
+});
+
+app.post('/demo/:pathVar', function(req, res){
+    console.log('header', req.headers)
+    console.log('pathVar', req.params.pathVar);
+    console.log('body', req.body);
+    console.log('queryString', req.query);
+    res.send('ok');
 });
 
 app.post('/add', function(req, res){
